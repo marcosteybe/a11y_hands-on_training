@@ -1,89 +1,73 @@
 <!DOCTYPE html>
+<!-- Be aware of the lang attribute -->
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>Super duper phone shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://sdx.scsstatic.ch/v2.4.0/css/sdx.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body class="margin-4">
-<header class="text-h1">Swisscom - Übersicht</header>
-<nav>
-    <ul class="nav-items">
-        <li class="nav-item"><a class="nav-link" href="index.html">Übersicht</a></li>
-        <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
-        <li class="nav-item"><a class="nav-link" href="tab_navigation.html">Tab navigation</a></li>
-    </ul>
-</nav>
-<article>
-    <!-- Good headers -->
-        <h1>
-            Residential customers
-        </h1>
-        <h2>
-            Products
-        </h2>
-        <h3>
-            Smartphones
-        </h3>
-
-        <h4>
-            With a new subscription
-        </h4>
-        <p>
-        <!-- Good list -->
-            <ul class="list">
-                <li>
-                    Samsung
-                </li>
-                <li>
-                    Apple
-                </li>
+    <head>
+        <meta charset="utf-8" />
+        <title>Super duper phone shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://sdx.scsstatic.ch/v2.4.0/css/sdx.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body class="margin-4">
+        <div id="header">
+            <span class="text-h1">Swisscom - Übersicht</span>
+            <p class="int-red margin-bottom-4">
+                <i class="icon icon--s2 icon-cancel int-red" aria-hidden="true"></i>
+                <span>Not Accessible</span> - <a href="index_a11y.html">Make it better!</a>
+            </p>
+        </div>
+        <dev id="nav">
+            <ul class="nav-items">
+                <li class="nav-item"><a class="nav-link" href="index.html">Übersicht</a></li>
+                <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
+                <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
+                <li class="nav-item"><a class="nav-link" href="tab_navigation.html">Tab navigation</a></li>
             </ul>
-        </p>
-        <h4>
-            Without a new subscription
-        </h4>
-        <p>
-        <!-- Bad list -->
-            <div class="list">
-                <div>Samsung</div>
-                <div>Apple</div>
+        </dev>
+        <div id="container">
+            <h1>
+                Residential customers
+            </h1>
+            <h2>
+                Products
+            </h2>
+            <h4>
+                Smartphones
+            </h4>
+            <h5>
+                With a new subscription
+            </h5>
+            <p>
+                <div class="list">
+                    <div>Samsung</div>
+                    <div>Apple</div>
+                    <div>Nokia</div>
+                </div>
+            </p>
+            <p class="text-h5">
+                Without a new subscription
+            </p>
+        </div>
+        <div class="footer footer--compact footer--light margin-top-4">
+            <div class="container">
+                <ul class="nav-items">
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">
+                            Terms of use
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">
+                            Feedback
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </p>
-    <!--  Bad headers -->
-        <h2>
-            Tablets
-        </h2>
-        <h3>
-            With a new subscription
-        </h3>
-        <p class="text-h4">
-            Without a new subscription
-        </p>
-</article>
-<footer class="footer footer--compact footer--light margin-top-4">
-    <div class="container">
-        <ul class="nav-items">
-            <li class="nav-item">
-                <a href="javascript:void(0);" class="nav-link">
-                    Contact
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:void(0);" class="nav-link">
-                    Terms of use
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:void(0);" class="nav-link">
-                    Feedback
-                </a>
-            </li>
-        </ul>
-    </div>
-</footer>
-</body>
+        </div>
+    </body>
 </html>

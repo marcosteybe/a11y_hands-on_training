@@ -1,6 +1,9 @@
+#nav ul,
 nav {
     height: 64px;
 }
+
+#nav li,
 nav li {
     margin-right: 16px;
     float: left;
