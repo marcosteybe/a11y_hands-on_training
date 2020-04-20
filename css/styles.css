@@ -1,0 +1,20 @@
+nav {
+    height: 64px;
+}
+nav li {
+    margin-right: 16px;
+    float: left;
+}
+
+.list div{
+    margin-left: 18px;
+    margin-bottom: 12px;
+}
+
+.list div::before{
+    content: "•";
+    color: #1781e3;
+    float: left;
+    margin-left: -18px;
+    font-size: 33px;
+}
