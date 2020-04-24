@@ -9,12 +9,12 @@ nav li {
     float: left;
 }
 
-.list div{
+.list div {
     margin-left: 18px;
     margin-bottom: 12px;
 }
 
-.list div::before{
+.list div::before {
     content: "•";
     color: #1781e3;
     float: left;
