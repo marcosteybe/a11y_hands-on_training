@@ -76,13 +76,13 @@ img {
     padding: 15px;
 }
 
-.color-blind-good {
+.colorblind-box-good {
     background-color: rgb(71, 71, 71);
     color: #EEF3F6;
     padding: 15px;
 }
 
-.color-blind-box-bad {
+.colorblind-box-bad {
     background-color: #040070;
     color: #009E00;
     padding: 15px;
