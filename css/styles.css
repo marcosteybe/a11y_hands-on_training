@@ -92,6 +92,10 @@ img {
     margin: 0 8px;
 }
 
+.form-container {
+    width: 512px;
+}
+
 @media (max-width: 1023px) {
     .container-fluid {
         margin: 0 4px;

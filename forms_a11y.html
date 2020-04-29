@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="https://sdx.scsstatic.ch/v2.5.0/css/sdx.min.css">
         <link rel="stylesheet" href="./css/styles.css">
+        <script src="https://sdx.scsstatic.ch/v2.5.0/js/webcomponents/webcomponents.js"></script>
+        <script type="module" src="https://sdx.scsstatic.ch/v2.5.0/js/webcomponents/webcomponents/webcomponents.esm.js"></script>
     </head>
     <body class="margin-4">
         <header>
@@ -23,11 +25,50 @@
                 <li class="nav-item"><a class="nav-link" href="tab_navigation_a11y.html">Tab navigation</a></li>
             </ul>
         </nav>
-        <article>
-            - Forms
-            - Inputs
-            - Buttons vs. Links
-        </article>
+        <div class="container form-container">
+            <div class="row">
+                <div class="col">
+                    <sdx-input label="Name" placeholder="Jane Doe"></sdx-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <sdx-input type="textarea" label="Description" placeholder="Your wish here..."></sdx-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <sdx-select
+                        placeholder="Choose your phone..."
+                        label="Which phone are you using?"
+                    >
+                        <sdx-select-option value="iphone">iPhone</sdx-select-option>
+                        <sdx-select-option value="android">Android</sdx-select-option>
+                        <sdx-select-option value="iphone">Blackberry</sdx-select-option>
+                        <sdx-select-option value="iphone">Google</sdx-select-option>
+                    </sdx-select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <sdx-input-group type="checkbox" label="Check apps: " inline>
+                        <sdx-input-item value="facebook">Facbook</sdx-input-item>
+                        <sdx-input-item value="twitter">Twitter</sdx-input-item>
+                        <sdx-input-item value="netflix">Netflix</sdx-input-item>
+                        <sdx-input-item value="myswisscom">My Swisscom</sdx-input-item>
+                    </sdx-input-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <sdx-input-group type="radio" label="Payment method: " inline>
+                        <sdx-input-item value="card" checked>Card</sdx-input-item>
+                        <sdx-input-item value="paypal">Paypal</sdx-input-item>
+                        <sdx-input-item value="bill">Bill</sdx-input-item>
+                    </sdx-input-group>
+                </div>
+            </div>
+        </div>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">
                 <ul class="nav-items">
