@@ -93,7 +93,28 @@ img {
 }
 
 .form-container {
-    width: 512px;
+    width: 700px;
+}
+
+.error-message {
+	visibility: hidden;
+	color: red;
+	font-size: 12px;
+}
+
+.error-input .error-message {
+	visibility: visible;
+}
+
+.plain-form input {
+	border-width: 2px;
+	border-style: inset;
+	border-color: initial;
+	border-image: initial;
+}
+
+.plain-form .error-input input {
+	border-color: red;
 }
 
 @media (max-width: 1023px) {

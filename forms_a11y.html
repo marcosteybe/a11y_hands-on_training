@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="https://sdx.scsstatic.ch/v2.5.0/css/sdx.min.css">
         <link rel="stylesheet" href="./css/styles.css">
-        <script src="https://sdx.scsstatic.ch/v2.5.0/js/webcomponents/webcomponents.js"></script>
         <script type="module" src="https://sdx.scsstatic.ch/v2.5.0/js/webcomponents/webcomponents/webcomponents.esm.js"></script>
+        <script nomodule="" src="https://sdx.scsstatic.ch/v2.5.0/js/webcomponents/webcomponents/webcomponents.js"></script>
     </head>
     <body class="margin-4">
         <header>
@@ -25,50 +25,93 @@
                 <li class="nav-item"><a class="nav-link" href="tab_navigation_a11y.html">Tab navigation</a></li>
             </ul>
         </nav>
-        <div class="container form-container">
-            <div class="row">
-                <div class="col">
-                    <sdx-input label="Name" placeholder="Jane Doe"></sdx-input>
+        <form method="post" onsubmit="return validateForm()">
+            <div class="container form-container plain-form">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="name">Name: </label>
+                    </div>
+                    <div class="col-md-4"><input id="name" type="text" /></div>
+                    <div class="col-md-6"><span class="error-message" aria-describedby="name">Please enter your name.</span></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="password">Password: </label>
+                    </div>
+                    <div class="col-md-10"><input id="password" type="password" onkeyup="validatePasswordMatch()" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="repeatPassword">Repeat Password: </label>
+                    </div>
+                    <div class="col-md-4"><input id="repeatPassword" type="password" onkeyup="validatePasswordMatch()" /></div>
+                    <div class="col-md-6" aria-live="assertive">
+                        <span class="error-message" aria-describedby="repeatPassword">Passwords do not match.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="description">Description: </label></div>
+                    <div class="col-md-10"><textarea id="description" type="text"></textarea></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="birthdate">Birth date: </label></div>
+                    <div class="col-md-10"><input id="birthdate" type="date"/></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="email">Email: </label></div>
+                    <div class="col-md-10"><input id="email" type="email" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="phone">Telephone number: </label></div>
+                    <div class="col-md-10"><input id="phone" type="tel" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="favphone">Your phone model: </label></div>
+                    <div class="col-md-10">
+                        <select id="favphone" name="select">
+                            <option value="">Select...</option>
+                            <option value="1">iPhone</option>
+                            <option value="2">Android</option>
+                            <option value="3">Blackberry</option>
+                            <option value="4">Google</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <fieldset>
+                            <legend>Select your apps:</legend>
+                            <input id="facebook" type="checkbox" value="facebook" />
+                            <label for="facebook">Facebook</label><br>
+                            <input id="twitter" type="checkbox" value="twitter"/>
+                            <label for="twitter">Twitter</label><br>
+                            <input id="netflix" type="checkbox" value="netflix"/>
+                            <label for="netflix">Netflix</label><br>
+                            <input id="myswisscom" type="checkbox" value="myswisscom"/>
+                            <label for="myswisscom">MySwisscom</label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <fieldset>
+                            <legend>Payment type:</legend>
+                            <input id="card" type="radio" name="shipping" value="card"/>
+                            <label for="card">Card</label><br>
+                            <input id="paypal" type="radio" name="shipping" value="paypal"/>
+                            <label for="paypal">Paypal</label><br>
+                            <input id="bill" type="radio" name="shipping" value="bill"/>
+                            <label for="bill">Bill</label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button id="submit-button" class="example-submit" type="submit">Submit</button>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <sdx-input type="textarea" label="Description" placeholder="Your wish here..."></sdx-input>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <sdx-select
-                        placeholder="Choose your phone..."
-                        label="Which phone are you using?"
-                    >
-                        <sdx-select-option value="iphone">iPhone</sdx-select-option>
-                        <sdx-select-option value="android">Android</sdx-select-option>
-                        <sdx-select-option value="iphone">Blackberry</sdx-select-option>
-                        <sdx-select-option value="iphone">Google</sdx-select-option>
-                    </sdx-select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <sdx-input-group type="checkbox" label="Check apps: " inline>
-                        <sdx-input-item value="facebook">Facbook</sdx-input-item>
-                        <sdx-input-item value="twitter">Twitter</sdx-input-item>
-                        <sdx-input-item value="netflix">Netflix</sdx-input-item>
-                        <sdx-input-item value="myswisscom">My Swisscom</sdx-input-item>
-                    </sdx-input-group>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <sdx-input-group type="radio" label="Payment method: " inline>
-                        <sdx-input-item value="card" checked>Card</sdx-input-item>
-                        <sdx-input-item value="paypal">Paypal</sdx-input-item>
-                        <sdx-input-item value="bill">Bill</sdx-input-item>
-                    </sdx-input-group>
-                </div>
-            </div>
-        </div>
+        </form>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">
                 <ul class="nav-items">
@@ -90,5 +133,41 @@
                 </ul>
             </div>
         </footer>
+    <script>
+        formValid = true;
+
+		/**
+         * For dynamically added validation messages, we should use aria-live assertive on the area, to have the message read out asap
+		 */
+		function validatePasswordMatch() {
+			var password = document.getElementById("password").value;
+			var repeatPassword = document.getElementById("repeatPassword").value;
+			if (repeatPassword !== '') {
+				if (password !== repeatPassword) {
+					document.getElementById("repeatPassword").parentElement.parentElement.classList.add("error-input")
+                    formValid = false;
+				} else {
+					document.getElementById("repeatPassword").parentElement.parentElement.classList.remove("error-input");
+					formValid = true;
+				}
+			}
+		}
+
+		function validateForm() {
+			validateRequiredInputElement("name");
+			return formValid;
+		}
+
+		function validateRequiredInputElement(elementId) {
+			var name = document.getElementById(elementId).value;
+			if (name.trim() === '') {
+				document.getElementById(elementId).parentElement.parentElement.classList.add("error-input");
+				document.getElementById(elementId).focus();
+				formValid = false;
+			} else {
+				document.getElementById(elementId).parentElement.parentElement.classList.remove("error-input");
+			}
+		}
+    </script>
     </body>
 </html>

@@ -23,57 +23,74 @@
                 <li class="nav-item"><a class="nav-link" href="tab_navigation.html">Tab navigation</a></li>
             </ul>
         </nav>
-        <div class="container form-container">
-            <div class="row">
-                <div class="col-md-6"><label>Name: </label></div>
-                <div class="col-md-6"><input id="name" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"><label>Description: </label></div>
-                <div class="col-md-6"><textarea id="description" type="text"></textarea></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"><label>Your phone model: </label></div>
-                <div class="col-md-6">
-                    <select id="favphone" name="select">
-                        <option value="1">iPhone</option>
-                        <option value="2">Android</option>
-                        <option value="3">Blackberry</option>
-                        <option value="4">Google</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"><label>Check apps: </label></div>
-                <div class="col-md-6">
-                    <input id="facebook" type="checkbox" value="facebook"> Facebook
-                    <input id="twitter" type="checkbox" value="twitter"> Twitter
-                    <input id="netflix" type="checkbox" value="netflix"> Netflix
-                    <input id="myswisscom" type="checkbox" value="myswisscom"> MySwisscom
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"><label>Payment type: </label></div>
-                <div class="col-md-6">
-                    <input id="card" type="radio" name="shipping" value="card"> Card
-                    <input id="paypal" type="radio" name="shipping" value="paypal"> Paypal
-                    <input id="bill" type="radio" name="shipping" value="bill"> Bill
-                </div>
-            </div>
-        </div>
-        <h2 class="text-h3">Information</h2>
-        <p class="font-size-bad">Free activation for subscriptions ordered online. For all other channels the activation fee is 40.–.</p>
-        <h2 class="text-h3">Support and help</h2>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 contrast-box-bad">Swisscom offers professional and speedy support.</div>
-                <div class="col-md-6 colorblind-box-bad">Follow your device's instructions to set up your mobile phone.</div>
-            </div>
-        </div>
-        <h2 class="text-h3">Get a free gift</h2>
-        <div>
-            <p>If you order two mobile phones today you get an exclusive french wine bottle for free! The bottle's label is decorated with french proverbs, like: Quand le vin est tiré, il faut le boire.</p>
-        </div>
+		<form method="post" onsubmit="return validateForm()">
+			<div class="container form-container plain-form">
+				<div class="row">
+					<div class="col-md-2">Name*: </div>
+					<div class="col-md-4"><input id="name" type="text" /></div>
+					<div class="col-md-6"><span class="error-message">Please enter your name.</span></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">Password: </div>
+					<div class="col-md-10"><input id="password" type="text" onkeyup="validatePasswordMatch()" /></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">Repeat password: </div>
+					<div class="col-md-4"><input id="repeatPassword" type="text" onkeyup="validatePasswordMatch()" /></div>
+					<div class="col-md-6"><span class="error-message">Passwords do not match.</span></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><label>Description: </label></div>
+					<div class="col-md-10"><textarea id="description" type="text"></textarea></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><label>Birth date: </label></div>
+					<div class="col-md-10"><input id="birthdate" type="text" placeholder="DD/MM/YYYY" /></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><span>Email: </span></div>
+					<div class="col-md-10"><input id="email" type="text" placeholder="john.doe@swisscom.com" /></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><span>Telephone number: </span></div>
+					<div class="col-md-10"><input id="phone" type="text" /></div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><label>Your phone model: </label></div>
+					<div class="col-md-10">
+						<select id="favphone" name="select">
+							<option value="1">iPhone</option>
+							<option value="2">Android</option>
+							<option value="3">Blackberry</option>
+							<option value="4">Google</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><label>Check apps: </label></div>
+					<div class="col-md-10">
+						<input id="facebook" type="checkbox" value="facebook"> Facebook<br/>
+						<input id="twitter" type="checkbox" value="twitter"> Twitter<br/>
+						<input id="netflix" type="checkbox" value="netflix"> Netflix<br/>
+						<input id="myswisscom" type="checkbox" value="myswisscom"> MySwisscom<br/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2"><label>Payment type: </label></div>
+					<div class="col-md-10">
+						Card <input id="card" type="radio" name="shipping" value="card"><br/>
+						Paypal <input id="paypal" type="radio" name="shipping" value="paypal"><br/>
+						Bill <input id="bill" type="radio" name="shipping" value="bill"><br/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<button class="example-submit" type="submit">Submit</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">
                 <ul class="nav-items">
@@ -95,5 +112,36 @@
                 </ul>
             </div>
         </footer>
+		<script>
+			formValid = true;
+			function validatePasswordMatch() {
+				var password = document.getElementById("password").value;
+				var repeatPassword = document.getElementById("repeatPassword").value;
+				if (repeatPassword !== '') {
+					if (password !== repeatPassword) {
+						document.getElementById("repeatPassword").parentElement.parentElement.classList.add("error-input")
+						formValid = false;
+					} else {
+						document.getElementById("repeatPassword").parentElement.parentElement.classList.remove("error-input");
+						formValid = true;
+					}
+				}
+			}
+
+			function validateForm() {
+				validateRequiredInputElement("name");
+				return formValid;
+			}
+
+			function validateRequiredInputElement(elementId) {
+				var name = document.getElementById(elementId).value;
+				if (name.trim() === '') {
+					document.getElementById(elementId).parentElement.parentElement.classList.add("error-input");
+					formValid = false;
+				} else {
+					document.getElementById(elementId).parentElement.parentElement.classList.remove("error-input");
+				}
+			}
+		</script>
     </body>
 </html>
