@@ -25,26 +25,28 @@
         </nav>
         <form method="post" onsubmit="return validateForm()">
             <div class="container form-container plain-form">
-                <div class="row">
+            	<!-- With this row we demonstrate how should focus be set correctly on an error field, and how should aria-describedby be used to point to the appropriate error-message -->
+				<!-- It also demonstrates the use of the exemplary sr-only sdx class to add content that is read out only to screen readers -->
+				<div class="row">
                     <div class="col-md-2">
                         <label for="name">Name: </label>
                     </div>
                     <div class="col-md-4"><input id="name" type="text" aria-describedby="error-name" /></div>
                     <div class="col-md-6"><span class="error-message" id="error-name"><span class="sr-only">Error. This field is mandatory. </span>Please enter your name.</span></div>
                 </div>
-                <div class="row">
+				<div class="row">
                     <div class="col-md-2">
                         <label for="password">Password: </label>
                     </div>
                     <div class="col-md-10"><input id="password" type="password" onkeyup="validatePasswordMatch()" /></div>
                 </div>
+				<!-- With the following row we demonstrate how should aria-live=assertive be used to read out dynamically changed content -->
                 <div class="row">
                     <div class="col-md-2">
                         <label for="repeatPassword">Repeat Password: </label>
                     </div>
                     <div class="col-md-4"><input id="repeatPassword" type="password" onkeyup="validatePasswordMatch()" /></div>
-                    <div class="col-md-6" aria-live="assertive">
-                        <span class="error-message" aria-describedby="repeatPassword">Passwords do not match.</span>
+                    <div class="col-md-6 error-container" aria-live="assertive">
                     </div>
                 </div>
                 <div class="row">
@@ -150,15 +152,27 @@
 		function validatePasswordMatch() {
 			var password = document.getElementById("password").value;
 			var repeatPassword = document.getElementById("repeatPassword").value;
+
+			document.getElementById("repeatPassword").parentElement.parentElement.getElementsByClassName("error-container").item(0).innerHTML = '';
+			document.getElementById("repeatPassword").parentElement.parentElement.classList.remove("error-input");
+
 			if (repeatPassword !== '') {
 				if (password !== repeatPassword) {
-					document.getElementById("repeatPassword").parentElement.parentElement.classList.add("error-input")
+					var errorMessage = createErrorMessage("Passwords do not match!");
+					document.getElementById("repeatPassword").parentElement.parentElement.getElementsByClassName("error-container").item(0).appendChild(errorMessage);
+					document.getElementById("repeatPassword").parentElement.parentElement.classList.add("error-input");
                     formValid = false;
 				} else {
-					document.getElementById("repeatPassword").parentElement.parentElement.classList.remove("error-input");
 					formValid = true;
 				}
 			}
+		}
+
+		function createErrorMessage(elementHTML) {
+			var errorSpan = document.createElement("span");
+			errorSpan.classList.add("error-message");
+			errorSpan.innerHTML = elementHTML;
+			return errorSpan;
 		}
 
 		function validateForm() {
