@@ -12,7 +12,7 @@
             <span class="text-h1">Swisscom - Forms</span>
             <p class="int-green--active margin-bottom-4">
                 <i class="icon icon--s2 icon-accessibility int-green--active" aria-hidden="true"></i>
-                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> - <a href="forms.html">This is how it is NOT done!</a>
+                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> - <a href="forms.html">Click here to see how it is NOT done!</a>
             </p>
         </header>
         <nav>
@@ -29,8 +29,8 @@
                     <div class="col-md-2">
                         <label for="name">Name: </label>
                     </div>
-                    <div class="col-md-4"><input id="name" type="text" /></div>
-                    <div class="col-md-6"><span class="error-message" aria-describedby="name">Please enter your name.</span></div>
+                    <div class="col-md-4"><input id="name" type="text" aria-describedby="error-name" /></div>
+                    <div class="col-md-6"><span class="error-message" id="error-name"><span class="sr-only">Error. This field is mandatory. </span>Please enter your name.</span></div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
@@ -52,8 +52,8 @@
                     <div class="col-md-10"><textarea id="description" type="text"></textarea></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2"><label for="birthdate">Birth date: </label></div>
-                    <div class="col-md-10"><input id="birthdate" type="date"/></div>
+                    <div class="col-md-2"><label for="birthdate">Birth date (format mm/dd/yyyy): </label></div>
+                    <div class="col-md-10"><input id="birthdate" type="date" placeholder="mm/dd/yyyy"/></div>
                 </div>
                 <div class="row">
                     <div class="col-md-2"><label for="email">Email: </label></div>
