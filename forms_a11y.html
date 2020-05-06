@@ -9,10 +9,10 @@
     </head>
     <body class="margin-4">
         <header>
-            <span class="text-h1">Swisscom - Forms</span>
+            <h1 class="text-h1">Swisscom - Forms</h1>
             <p class="int-green--active margin-bottom-4">
                 <i class="icon icon--s2 icon-accessibility int-green--active" aria-hidden="true"></i>
-                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> - <a href="forms.html">This is how it is NOT done!</a>
+                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> - <a href="forms.html">Click here to see how it is NOT done!</a>
             </p>
         </header>
         <nav>
@@ -23,11 +23,106 @@
                 <li class="nav-item"><a class="nav-link" href="tab_navigation_a11y.html">Tab navigation</a></li>
             </ul>
         </nav>
-        <article>
-            - Forms
-            - Inputs
-            - Buttons vs. Links
-        </article>
+        <form method="post" onsubmit="return validateForm()">
+            <div class="container form-container plain-form">
+            	<!-- With this row we demonstrate how should focus be set correctly on an error field, and how should aria-describedby be used to point to the appropriate error-message -->
+				<!-- It also demonstrates the use of the exemplary sr-only sdx class to add content that is read out only to screen readers -->
+				<div class="row">
+                    <div class="col-md-2">
+                        <label for="name">Name: </label>
+                    </div>
+                    <div class="col-md-4"><input aria-required="true" id="name" type="text" aria-describedby="error-name" /></div>
+                    <div class="col-md-6"><span class="error-message" id="error-name"><span class="sr-only">Error. This field is mandatory. </span>Please enter your name.</span></div>
+                </div>
+				<div class="row">
+                    <div class="col-md-2">
+                        <label for="password">Password: </label>
+                    </div>
+                    <div class="col-md-10"><input id="password" type="password" onkeyup="validatePasswordMatch()" /></div>
+                </div>
+				<!-- With the following row we demonstrate how should aria-live=assertive be used to read out dynamically changed content -->
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="repeatPassword">Repeat Password: </label>
+                    </div>
+                    <div class="col-md-4"><input id="repeatPassword" type="password" onkeyup="validatePasswordMatch()" /></div>
+                    <div class="col-md-6 error-container" aria-live="assertive">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="description">Description: </label></div>
+                    <div class="col-md-10"><textarea id="description" type="text"></textarea></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="birthdate">Birth date <span class="sr-only">Enter a valid date in day, month, year (for example 13.07.2019) </span>: </label></div>
+                    <div class="col-md-10"><input id="birthdate" placeholder="mm/dd/yyyy"/></div>
+                </div>
+                <!-- For the following fields email and tel, HTML5 validation will kick in when we try to submit the form, since they have a HTML5 type attribute set -->
+                <div class="row">
+                    <div class="col-md-2"><label for="email">Email: </label></div>
+                    <div class="col-md-10"><input id="email" type="email" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="phone">Telephone number: </label></div>
+                    <div class="col-md-10"><input id="phone" type="tel" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label for="favphone">Your phone model: </label></div>
+                    <div class="col-md-10">
+                        <select id="favphone" name="select">
+                            <option value="">Select...</option>
+                            <option value="1">iPhone</option>
+                            <option value="2">Android</option>
+                            <option value="3">Blackberry</option>
+                            <option value="4">Google</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <fieldset>
+                            <legend>Select your apps:</legend>
+                            <input id="facebook" type="checkbox" value="facebook" />
+                            <label for="facebook">Facebook</label><br>
+                            <input id="twitter" type="checkbox" value="twitter"/>
+                            <label for="twitter">Twitter</label><br>
+                            <input id="netflix" type="checkbox" value="netflix"/>
+                            <label for="netflix">Netflix</label><br>
+                            <input id="myswisscom" type="checkbox" value="myswisscom"/>
+                            <label for="myswisscom">MySwisscom</label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <fieldset>
+                            <legend>Payment type:</legend>
+                            <input id="card" type="radio" name="shipping" value="card"/>
+                            <label for="card">Card</label><br>
+                            <input id="paypal" type="radio" name="shipping" value="paypal"/>
+                            <label for="paypal">Paypal</label><br>
+                            <input id="bill" type="radio" name="shipping" value="bill"/>
+                            <label for="bill">Bill</label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Read about <a href="https://www.swisscom.com">MySwisscom</a>.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        For questions, mail Team Hawkeye <a href="mailto:group.R2A-Hawkeye@swisscom.com">group.R2A-Hawkeye@swisscom.com</a>.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button id="submit-button" class="example-submit" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">
                 <ul class="nav-items">
@@ -49,5 +144,53 @@
                 </ul>
             </div>
         </footer>
+    <script>
+        formValid = true;
+
+		/**
+         * For dynamically added validation messages, we should use aria-live assertive on the area, to have the message read out asap
+		 */
+		function validatePasswordMatch() {
+			var password = document.getElementById("password").value;
+			var repeatPassword = document.getElementById("repeatPassword").value;
+
+			document.getElementById("repeatPassword").parentElement.parentElement.getElementsByClassName("error-container").item(0).innerHTML = '';
+			document.getElementById("repeatPassword").parentElement.parentElement.classList.remove("error-input");
+
+			if (repeatPassword !== '') {
+				if (password !== repeatPassword) {
+					var errorMessage = createErrorMessage("Passwords do not match!");
+					document.getElementById("repeatPassword").parentElement.parentElement.getElementsByClassName("error-container").item(0).appendChild(errorMessage);
+					document.getElementById("repeatPassword").parentElement.parentElement.classList.add("error-input");
+                    formValid = false;
+				} else {
+					formValid = true;
+				}
+			}
+		}
+
+		function createErrorMessage(elementHTML) {
+			var errorSpan = document.createElement("span");
+			errorSpan.classList.add("error-message");
+			errorSpan.innerHTML = elementHTML;
+			return errorSpan;
+		}
+
+		function validateForm() {
+			validateRequiredInputElement("name");
+			return formValid;
+		}
+
+		function validateRequiredInputElement(elementId) {
+			var name = document.getElementById(elementId).value;
+			if (name.trim() === '') {
+				document.getElementById(elementId).parentElement.parentElement.classList.add("error-input");
+				document.getElementById(elementId).focus();
+				formValid = false;
+			} else {
+				document.getElementById(elementId).parentElement.parentElement.classList.remove("error-input");
+			}
+		}
+    </script>
     </body>
 </html>
