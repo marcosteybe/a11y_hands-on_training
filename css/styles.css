@@ -113,6 +113,25 @@ img {
 	border-image: initial;
 }
 
+.plain-form input:focus {
+    outline: 1px solid blue;
+}
+.plain-form select:focus {
+    outline: 1px solid blue;
+}
+
+.plain-form select {
+    background-color: white;
+    border-radius: 5px;
+    -webkit-appearance: menulist;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;
+    padding: 0;
+    height: auto;
+}
+
 .plain-form .error-input input {
 	border-color: red;
 }
