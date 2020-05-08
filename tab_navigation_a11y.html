@@ -23,8 +23,54 @@
                 <li class="nav-item"><a class="nav-link" href="tab_navigation_a11y.html">Tab navigation</a></li>
             </ul>
         </nav>
-        <article>
-        </article>
+        <h2 class="text-h3">Select your mobile phone</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 margin-v-2 align-center">
+                    <img src="img/mobile_icon.png">
+                    <label>OPPO Find X2 Pro</label>
+                    <button onclick="javascript:alert('You bought an OPPO Find X2 Pro');" class="button-small">Buy mobile</button>
+                </div>
+                <div class="col-md-4 margin-v-2 align-center">
+                    <img src="img/mobile_icon.png">
+                    <label>Samsung Galaxy S20+ 5G</label>
+                    <button onclick="javascript:alert('You bought a Samsung Galaxy S20+ 5G');" class="button-small">Buy mobile</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 margin-v-2 align-center">
+                    <img src="img/mobile_icon.png">
+                    <label>LG V60 ThinQ 5G</label>
+                    <button onclick="javascript:alert('You bought a LG V60 ThinQ 5G');" class="button-small">Buy mobile</button>
+                </div>
+                <div class="col-md-4 margin-v-2 align-center">
+                    <img src="img/mobile_icon.png">
+                    <label>Nokia 800 Tough</label>
+                    <button onclick="javascript:alert('You bought a Nokia 800 Tough');" class="button-small">Buy mobile</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-h3">Accessories and options</h2>
+        <p>
+            You can order a lot of different cases and covers for your mobile here:
+            <a href="javascript:alert('You will get your cases!');" >I want cases!</a>&nbsp;&nbsp;-&nbsp;&nbsp;
+            <a href="#" onclick="javascript:alert('You will get your covers!');">I want covers!</a>
+        </p>
+        <p>
+            Options can be added to your subscription.
+        </p>
+        <div class="single-row">
+            <button class="button-small" onclick="javascript:alert('Great data options');">Show data options</button>
+            <button class="button-small margin-h-2" onclick="javascript:alert('Great voice options');">Show voice options</button>
+        </div>
+        <h2 class="text-h3">Calculate your discount</h2>
+        <div class="margin-v-2 plain-form single-row">
+            <label for="discount-input">Enter price:</label>
+            <input size="15" type="text" maxlength="4" id="discount-input" class="margin-h-2" onkeydown="calculateDiscount(event)">
+            <label>Your discount:</label>&nbsp;&nbsp;<span id="discount-value">0.00</span>&nbsp;CHF
+        </div>
+        <h2 class="text-h3">Feedback</h2>
+        <button class="button-small" onclick="javascript:alert('Thank you!');">Rate our shop!</button>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">
                 <ul class="nav-items">
@@ -46,5 +92,29 @@
                 </ul>
             </div>
         </footer>
+        <script>
+            function calculateDiscount(event) {
+                // 0 - 9 || num 0 - num 9
+                if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
+                    event.preventDefault();
+                    if (event.target.value.length < 4) {
+                        event.target.value += event.key + '';
+                        updateDiscountValue(event.target.value);
+                    }
+                } else if (event.keyCode === 8 && event.target.value.length > 0) { // Backspace
+                    event.preventDefault();
+                    event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+                    updateDiscountValue(event.target.value);
+                } else if (event.keyCode !== 9) {
+                    event.preventDefault();
+                }
+            }
+
+            function updateDiscountValue(inputValue) {
+                var discountPercentage = 0.15;
+                var discountValue = inputValue.length > 0 ? ((Math.round((inputValue * discountPercentage) * 100) / 100).toFixed(2)) + '' : '0.00'
+                document.querySelector('#discount-value').innerHTML = discountValue;
+            }
+        </script>
     </body>
 </html>

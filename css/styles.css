@@ -52,7 +52,26 @@ button:hover, .button:hover {
     border-color: rgb(23, 129, 227);
 }
 
-img {
+button:focus {
+    background-color: rgb(8, 81, 218);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(23, 129, 227);
+}
+
+.no-focus:focus {
+    background-color: rgb(23, 129, 227);
+    border-color: rgb(23, 129, 227);
+}
+
+.button-small {
+    min-width: 80px;
+    height: 36px;
+    padding: 5px 11px;
+    font-size: 1rem;
+}
+
+.margin-bottom-20 {
     margin-bottom: 20px;
 }
 
@@ -134,6 +153,11 @@ img {
 
 .plain-form .error-input input {
 	border-color: red;
+}
+
+.single-row {
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 1023px) {
