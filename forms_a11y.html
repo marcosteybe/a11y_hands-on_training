@@ -9,18 +9,19 @@
     </head>
     <body class="margin-4">
         <header>
-            <h1 class="text-h1">Swisscom - Forms</h1>
+            <h1 class="heading">Swisscom - Forms</h1>
             <p class="int-green--active margin-bottom-4">
                 <i class="icon icon--s2 icon-accessibility int-green--active" aria-hidden="true"></i>
-                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> - <a href="forms.html">Click here to see how it is NOT done!</a>
+                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> <a href="forms.html" class="align-right a11y">Click here to see how it is NOT done!</a>
             </p>
         </header>
         <nav>
             <ul class="nav-items">
-                <li class="nav-item"><a class="nav-link" href="index_a11y.html">Overview</a></li>
-                <li class="nav-item"><a class="nav-link" href="layout_a11y.html">Layout</a></li>
-                <li class="nav-item"><a class="nav-link" href="forms_a11y.html">Forms</a></li>
-                <li class="nav-item"><a class="nav-link" href="tab_navigation_a11y.html">Tab navigation</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="index_a11y.html">Overview</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="layout_a11y.html">Layout</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="layout_contrasts.html">Color and Contrasts</a></li>
+                <li class="nav-item"><a class="nav-link a11y active" href="forms_a11y.html">Forms</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="tab_navigation_a11y.html">Tab/keyboard navigation</a></li>
             </ul>
         </nav>
         <form method="post" onsubmit="return validateForm()">
@@ -107,7 +108,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col margin-top-2">
                         Read about <a href="https://www.swisscom.com">MySwisscom</a>.
                     </div>
                 </div>
@@ -118,7 +119,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button id="submit-button" class="example-submit" type="submit">Submit</button>
+                        <button id="submit-button" class="example-submit margin-top-2" type="submit">Submit</button>
                     </div>
                 </div>
             </div>

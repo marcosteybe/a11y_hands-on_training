@@ -9,42 +9,43 @@
     </head>
     <body class="margin-4">
         <header>
-            <span class="text-h1">Swisscom - Tab navigation</span>
+            <h1 class="heading">Swisscom - Tab and Keyboard navigation</h1>
             <p class="int-green--active margin-bottom-4">
                 <i class="icon icon--s2 icon-accessibility int-green--active" aria-hidden="true"></i>
-                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> - <a href="tab_navigation.html">This is how it is NOT done!</a>
+                <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> <a href="tab_navigation.html" class="align-right a11y">This is how it is NOT done!</a>
             </p>
         </header>
         <nav>
             <ul class="nav-items">
-                <li class="nav-item"><a class="nav-link" href="index_a11y.html">Overview</a></li>
-                <li class="nav-item"><a class="nav-link" href="layout_a11y.html">Layout</a></li>
-                <li class="nav-item"><a class="nav-link" href="forms_a11y.html">Forms</a></li>
-                <li class="nav-item"><a class="nav-link" href="tab_navigation_a11y.html">Tab navigation</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="index_a11y.html">Overview</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="layout_a11y.html">Layout</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="layout_contrasts.html">Color and Contrasts</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="forms_a11y.html">Forms</a></li>
+                <li class="nav-item"><a class="nav-link a11y active" href="tab_navigation_a11y.html">Tab/keyboard navigation</a></li>
             </ul>
         </nav>
         <h2 class="text-h3">Select your mobile phone</h2>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 margin-v-2 align-center">
-                    <img src="img/mobile_icon.png">
+                    <img src="img/mobile_icon.png" aria-hidden="true"> <!--hide image if no added value is given and only decorative-->
                     <label>OPPO Find X2 Pro</label>
                     <button onclick="javascript:alert('You bought an OPPO Find X2 Pro');" class="button-small">Buy mobile</button>
                 </div>
                 <div class="col-md-4 margin-v-2 align-center">
-                    <img src="img/mobile_icon.png">
+                    <img src="img/mobile_icon.png" aria-hidden="true"> <!--hide image if no added value is given and only decorative-->
                     <label>Samsung Galaxy S20+ 5G</label>
                     <button onclick="javascript:alert('You bought a Samsung Galaxy S20+ 5G');" class="button-small">Buy mobile</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 margin-v-2 align-center">
-                    <img src="img/mobile_icon.png">
+                    <img src="img/mobile_icon.png" aria-hidden="true"> <!--hide image if no added value is given and only decorative-->
                     <label>LG V60 ThinQ 5G</label>
                     <button onclick="javascript:alert('You bought a LG V60 ThinQ 5G');" class="button-small">Buy mobile</button>
                 </div>
                 <div class="col-md-4 margin-v-2 align-center">
-                    <img src="img/mobile_icon.png">
+                    <img src="img/mobile_icon.png" aria-hidden="true"> <!--hide image if no added value is given and only decorative-->
                     <label>Nokia 800 Tough</label>
                     <button onclick="javascript:alert('You bought a Nokia 800 Tough');" class="button-small">Buy mobile</button>
                 </div>

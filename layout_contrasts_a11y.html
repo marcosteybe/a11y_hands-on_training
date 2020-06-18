@@ -9,7 +9,7 @@
     </head>
     <body class="margin-4">
         <header>
-            <h1 class="heading">Swisscom - Layout</h1>
+            <h1 class="heading">Swisscom - Colors and Contrast</h1>
             <p class="int-green--active margin-bottom-4">
                 <i class="icon icon--s2 icon-accessibility int-green--active" aria-hidden="true"></i>
                 <span class="sr-only">The following component is accessible</span><span aria-hidden="true">Accessible</span> <a href="layout.html" class="align-right a11y">This is how it is NOT done!</a>
@@ -18,30 +18,26 @@
         <nav>
             <ul class="nav-items">
                 <li class="nav-item"><a class="nav-link a11y" href="index_a11y.html">Overview</a></li>
-                <li class="nav-item"><a class="nav-link a11y active" href="layout_a11y.html">Layout</a></li>
-                <li class="nav-item"><a class="nav-link a11y" href="layout_contrasts.html">Color and Contrasts</a></li>
+                <li class="nav-item"><a class="nav-link a11y" href="layout_a11y.html">Layout</a></li>
+                <li class="nav-item"><a class="nav-link a11y active" href="layout_contrasts.html">Color and Contrasts</a></li>
                 <li class="nav-item"><a class="nav-link a11y" href="forms_a11y.html">Forms</a></li>
                 <li class="nav-item"><a class="nav-link a11y" href="tab_navigation_a11y.html">Tab/keyboard navigation</a></li>
             </ul>
         </nav>
-        <h2 class="text-h3">Select your mobile phone</h2>
+        <!-- High color contrast -->
+        <h2 class="text-h3">Information</h2>
+        <!-- Currency mentioned for screen reader only -->
+        <p class="font-size-good">Free activation for subscriptions ordered online. For all other channels the activation fee is <span class="sr-only">CHF</span>40.–.</p>
+        <h2 class="text-h3">Support and help</h2>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 margin-v-2 align-center">
-                    <img class="margin-bottom-20" src="img/p4r13qynry.png" alt="Huawei P30">
-                    <button onclick="javascript:alert('Successfully added to shopping cart');">Add to shopping cart</button>
-                </div>
-                <div class="col-md-4 margin-v-2 align-center">
-                    <img class="margin-bottom-20" src="img/5d9vs6l9b8.png" alt="iPhone XS">
-                    <button onclick="javascript:alert('Download completed');">
-                        <span lang="en">Download manual</span>
-                    </button>
-                </div>
-                <div class="col-md-4 margin-v-2 align-center">
-                    <img class="margin-bottom-20" src="img/c9d4y0oz82.png" alt="Samsung Galaxy S20">
-                    <a href="https://www.samsung.com/uk/smartphones/galaxy-s20/">Visit product website</a>
-                </div>
+                <div class="col-md-6 font font--semi-bold contrast-box-good">Swisscom offers professional and speedy support.</div>
+                <div class="col-md-6 font font--semi-bold colorblind-box-good">Follow your device's instructions to set up your mobile phone.</div>
             </div>
+        </div>
+        <h2 class="text-h3">Get a free gift</h2>
+        <div>
+            <p>If you order two mobile phones today you get an exclusive french wine bottle for free! The bottle's label is decorated with french proverbs, like: <span lang="fr">Quand le vin est tiré, il faut le boire.</span></p>
         </div>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">
