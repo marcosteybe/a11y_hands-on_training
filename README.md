@@ -10,9 +10,12 @@ By using native tags you are already on an accessible way as native tags are ide
 Overview:
 1. Create a semantic structure for Headings. https://www.w3.org/TR/WCAG20-TECHS/H42.html
 2. Make the list accessible. https://www.w3.org/TR/WCAG20-TECHS/H48.html
+3. Use the native tag instead of the deprecated role labeling for the header, footer, main part.
 
 Forms: 
 1. Set the focus to invalid field after submit. https://www.w3.org/WAI/tutorials/forms/instructions/
+2. Bind a label to the input field https://www.w3.org/WAI/tutorials/forms/labels/
+3. Make the dynamic content of the password validation accessible https://www.w3.org/WAI/tutorials/forms/notifications/
   
 Layout: 
 1. Buttons > Use a button for actions https://www.w3.org/TR/wai-aria-practices/examples/button/button.html
