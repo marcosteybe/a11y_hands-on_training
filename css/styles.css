@@ -8,19 +8,11 @@ h2 {
 
 a {
 	text-decoration: underline;
-}
-
-a:hover {
-    border-bottom: none !important;
-}
-
-a:focus {
-    border-bottom: none !important;
+	border-bottom: none !important;
 }
 
 a.a11y:focus {
     outline: 1px solid blue;
-    border-bottom: none !important;
 }
 
 .active {

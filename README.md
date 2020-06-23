@@ -28,5 +28,5 @@ Colors, Contrasts, Language and Fontsize:
 3. Use a scalable font-size. https://www.w3.org/TR/WCAG20-TECHS/C14.html
   
 Keyboard Navigation: 
-1. Use your Keyboard and check if the focusorder is ok and every active element can be focused. Is the focus visible? https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html
+1. Use your Keyboard and check if the focus order is ok and every active element can be focused. Is the focus visible? https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html
 2. Avoid focus traps! https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-trapping.html
