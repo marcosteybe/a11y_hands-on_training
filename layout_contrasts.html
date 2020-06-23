@@ -9,37 +9,34 @@
     </head>
     <body class="margin-4">
         <header>
-            <span class="text-h1">Swisscom - Layout</span>
+            <span class="text-h1">Swisscom - Colors and contrast</span>
             <p class="int-red margin-bottom-4">
                 <i class="icon icon--s2 icon-cancel int-red" aria-hidden="true"></i>
-                <span>Not Accessible</span> <a href="layout_a11y.html" class="align-right">Go to the accessible version</a>
+                <span>Not Accessible</span><a href="layout_contrasts_a11y.html" class="align-right">Go to the accessible version</a>
             </p>
         </header>
         <nav>
             <ul class="nav-items">
                 <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
-                <li class="nav-item"><a class="nav-link active" href="layout.html">Layout</a></li>
-                <li class="nav-item"><a class="nav-link" href="layout_contrasts.html">Color and contrasts</a></li>
+                <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
+                <li class="nav-item"><a class="nav-link active" href="layout_contrasts.html">Color and contrasts</a></li>
                 <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
                 <li class="nav-item"><a class="nav-link" href="tab_navigation.html">Tab/keyboard navigation</a></li>
             </ul>
         </nav>
-        <h2 class="text-h3">Select your mobile phone</h2>
+
+        <!-- Low color contrast -->
+        <p class="font-size-bad">Free activation for subscriptions ordered online. For all other channels the activation fee is CHF 40.–.</p>
+        <h2 class="text-h3">Support and help</h2>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 margin-v-2 align-center">
-                    <img class="margin-bottom-20" src="img/p4r13qynry.png">
-                    <a class="button" href="javascript:alert('Successfully added to shopping cart');">Add to shopping cart</a>
-                </div>
-                <div class="col-md-4 margin-v-2 align-center">
-                    <img class="margin-bottom-20" src="img/5d9vs6l9b8.png">
-                    <div class="button" onclick="javascript:alert('Download completed');">Download manual</div>
-                </div>
-                <div class="col-md-4 margin-v-2 align-center">
-                    <img class="margin-bottom-20" src="img/c9d4y0oz82.png">
-                    <button onclick="javascript:window.location.href='https://www.samsung.com/uk/smartphones/galaxy-s20/'">Visit product website</button>
-                </div>
+                <div class="col-md-6 contrast-box-bad">Swisscom offers professional and speedy support.</div>
+                <div class="col-md-6 colorblind-box-bad">Follow your device's instructions to set up your mobile phone.</div>
             </div>
+        </div>
+        <h2 class="text-h3">Get a free gift</h2>
+        <div>
+            <p>If you order two mobile phones today you get an exclusive french wine bottle for free! The bottle's label is decorated with french proverbs, like: Quand le vin est tiré, il faut le boire.</p>
         </div>
         <footer class="footer footer--compact footer--light margin-top-4">
             <div class="container">

@@ -1,5 +1,23 @@
+h1.heading {
+    margin-bottom: 0px;
+}
+
 h2 {
     margin-top: 50px;
+}
+
+a {
+	text-decoration: underline;
+	border-bottom: none !important;
+}
+
+a.a11y:focus {
+    outline: 1px solid blue;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #nav ul, nav {
@@ -30,6 +48,10 @@ h2 {
     align-items: center;
 }
 
+.align-right {
+	float: right;
+}
+
 button, .button {
     text-align: center;
     background-color: rgb(23, 129, 227);
@@ -53,10 +75,10 @@ button:hover, .button:hover {
 }
 
 button:focus {
-    background-color: rgb(8, 81, 218);
+    background-color: rgb(0, 72, 207);
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(23, 129, 227);
+    border-color: rgb(0, 72, 207);
 }
 
 .no-focus:focus {
@@ -170,4 +192,13 @@ button:focus {
     .container-fluid {
         margin: 0;
     }
+}
+
+legend {
+    padding-top: 16px;
+}
+
+label {
+    color: black;
+    font-size: 1em;
 }
